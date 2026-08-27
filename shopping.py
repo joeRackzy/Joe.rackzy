@@ -35,6 +35,13 @@ students = ["joshua", "mary", "jeams", "pious"]
 for item in students:
        print(f"this is: {item}")
 
+
+def greeting(name):
+  pass 
+  return f"Hello, {name}. You are Wellcome to Takent Nation"
+  print(greeting(joseph))
+
+
 for c in range(12):
     if c == 7:  
         break

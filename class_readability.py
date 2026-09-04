@@ -33,6 +33,7 @@ for item in names:
     print("i stay with " + item.upper() + " in the same class")
 
 guest_list = ["lucy", "Grace", "phillip"]
+guest_list.sort()
 print("\nso sad to hear this, that one of our guest is not going to make it to the dinner to night".upper())
 del guest_list[2]
 print("\nam so happy that we found a bigger dinner table for the dinner so i will need to add some people to my guest list ".upper())
@@ -52,7 +53,7 @@ print("\nsorry i can in only invite 2 person to the dinner".upper())
 
 while len(more_guest) > 2:
     remove_guest = more_guest.pop()
-    print(f"i so sorry i can't  invite {remove_guest} to the dinner to night.") 
+    print(f"i am so sorry i can't  invite {remove_guest} to the dinner to night.") 
 print("my list are remaing 2 persons" "\n".upper())
 
 for remaing in more_guest:

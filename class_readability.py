@@ -50,6 +50,7 @@ more_guest.insert(4,"Esther")
 for list in more_guest:
  print(f"Dear {list} you rae cordially invited to dinner")
 print("\nsorry i can in only invite 2 person to the dinner".upper())
+print("")
 
 while len(more_guest) > 2:
     remove_guest = more_guest.pop()

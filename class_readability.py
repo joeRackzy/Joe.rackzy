@@ -60,6 +60,5 @@ print("my list are remaing 2 persons" "\n".upper())
 for remaing in more_guest:
     print(f"{remaing.upper()}. you are still invited to the dinner")
 
-del more_guest[-1]
-del more_guest[0]     
+del more_guest[:]     
 print(f"{more_guest}")

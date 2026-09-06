@@ -3,6 +3,7 @@ print("|\nthis is the back of the list" "\n".upper())
 Seeing_the_world.sort(reverse=True)
 for place in Seeing_the_world:
   print(f"{(place)}")
+  
 print(" ")
 Seeing_the_world.sort()
 print("this are the original list" .upper() + "\n")  

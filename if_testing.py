@@ -8,3 +8,5 @@ if "regina" in registerd_list:
 if "red" in registerd_list:
     print("15 point\n")    
 print("")    
+
+

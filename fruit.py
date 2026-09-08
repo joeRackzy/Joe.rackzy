@@ -1,0 +1,9 @@
+favorite_fruit = ["mango","orange", "banana"]
+if "chery" in favorite_fruit:
+    print("you already likre chery.")
+if "banana" in favorite_fruit:
+    print("you already like banana")
+if "food" in favorite_fruit:
+    print("you already like food")    
+if "orange" in favorite_fruit:
+    print("you already like orange")   

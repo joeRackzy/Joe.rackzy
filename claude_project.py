@@ -1,10 +1,9 @@
-claude_Guests = ["Alice", "Bob", "Charlie", "David", "Joseph"]
+claude_Guests = ["Alice", "Bob", "faith","Charlie", "David", "Joseph"]
 for Guest in claude_Guests:
     print(f"hi {Guest}: you are invited to a diiner in my house tonight.")
 claude_Guests.remove("Alice")  
 print("\nsomebody is not comming to the dinnerto nightso we remove him for the list")  
 claude_Guests.insert(0,"Jene")
-claude_Guests.append("faith")
 
 for Guest in claude_Guests:
     
@@ -18,5 +17,6 @@ print(f"this is the original list \n{claude_Guests}")
 Guest_count = len(claude_Guests)
 print(f"the number of guests remaining is: {Guest_count}")
 
-   
-
+Guest_seat = list(range(1,7))
+for number, value in enumerate(claude_Guests):
+    print(f"{value} is assigned to seat on a number {Guest_seat[number]}")

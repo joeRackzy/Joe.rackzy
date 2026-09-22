@@ -11,7 +11,7 @@ while active:
     snack_orders[names] = ages
     question = input("add another?(yes/no)")
     if question == "no":
-        active = False   
+         active = False   
 print("\t-----result for snack orders-------")   
 for name, age in snack_orders.items()  :
      print(f"{name} is {age} years old")

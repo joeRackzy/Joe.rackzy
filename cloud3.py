@@ -1,12 +1,19 @@
-return_cart = ["suger girl", "chike and the river", "story my mother told me",
-              "sweet sixteen", "lion and the juewl"]
+return_cart = ["suger girl", 
+               "story my mother told me",
+                "sweet sixteen",
+                "the lion and the juewl",
+                "this is fate"
+                ]
 shelved_books = []
-while return_cart:
-    book = return_cart.pop()
-    print(f"{book} shelving: [title]")
-    shelved_books.append(book)
-print(f"{return_cart}\n")
-print(f"return_cart has {len(return_cart)}") 
-print(f"shalved_books has {len(shelved_books)}")  
-for li in shelved_books:
-    print(li) 
+
+while return_cart :
+    books = return_cart.pop()
+    print(f"Shelved: {books.title()}")
+    shelved_books.append(books)
+    adding_book = "early ages"
+shelved_books.append(adding_book)
+while shelved_books.count(adding_book) == 1 :
+    shelved_books.remove(adding_book)
+
+print(f"return_cart is {len(return_cart)}\n")
+print(f"shelved_books is now {len(shelved_books)}")

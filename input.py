@@ -1,4 +1,4 @@
-Age = input("how olg are you?")
+Age = input("how old are you?")
 Age =int(Age)
 if Age <= 18:
     print("you are not an adult")

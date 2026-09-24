@@ -1,6 +1,6 @@
 
 def add_number(a,b):
-    print(a* b)   
+    print(a * b)   
 
 def Subtraction(a,b):
     print(a - b)

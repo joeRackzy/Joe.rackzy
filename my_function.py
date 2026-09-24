@@ -5,6 +5,8 @@ def greet(name):
 def squre(number):
     print(number * number)
 
-def add_number(a,b):
-    print(a*b)      
+
+
+ 
+
 

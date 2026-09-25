@@ -13,3 +13,11 @@ caculator.Divition(30,2)
 caculator.Subtraction(526,500)
 caculator.square(6)
 caculator.add_number(2,4)
+
+
+from func_in_cloude import list
+list(["faith", "grace", "peace"]) 
+
+from func_in_cloude import my_pets
+my_pets()
+my_pets()

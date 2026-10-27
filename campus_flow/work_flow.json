@@ -1,14 +1,32 @@
 [
     {
         "Name": "joseph",
-        "school_fees": 1,
+        "school_fees": "I have not paid",
         "issues": "food",
-        "priority": 3
+        "priority": "High"
     },
     {
         "Name": "joseph",
-        "school_fees": 3,
+        "school_fees": "I have paid",
         "issues": "money",
-        "priority": 4
+        "priority": "Critical"
+    },
+    {
+        "Name": "peter",
+        "school_fees": "I have paid",
+        "issues": "money",
+        "priority": "Medium"
+    },
+    {
+        "Name": "faith",
+        "school_fees": "I have paid",
+        "issues": "water",
+        "priority": 3
+    },
+    {
+        "Name": "mary",
+        "school_fees": "I HAVE NOT PAY",
+        "issues": "money",
+        "priority": "Critical"
     }
 ]

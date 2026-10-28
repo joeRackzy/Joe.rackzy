@@ -28,5 +28,49 @@
         "school_fees": "I HAVE NOT PAY",
         "issues": "money",
         "priority": "Critical"
+    },
+    {
+        "Name": "peter",
+        "school_fees": "",
+        "issues": "",
+        "priority": "Critical",
+        "fees": "I HAVE NOT PAY",
+        "issue": "hungry"
+    },
+    {
+        "Name": "clament",
+        "fees": "i have paid",
+        "issue": "learning",
+        "priority": "Critical"
+    },
+    {
+        "Name": "semion",
+        "fees": "i only paid half of the fees",
+        "issue": "school",
+        "priority": "High"
+    },
+    {
+        "Name": "monkey",
+        "fees": "i only paid half of the fees",
+        "issue": "moeny",
+        "priority": "Low"
+    },
+    {
+        "Name": "monica",
+        "fees": "i have paid",
+        "issue": "makeup",
+        "priority": "High"
+    },
+    {
+        "Name": "mumu",
+        "fees": "i have paid",
+        "issue": "money",
+        "priority": "High"
+    },
+    {
+        "Name": "mn",
+        "fees": "i have paid",
+        "issue": "er",
+        "priority": "Medium"
     }
 ]

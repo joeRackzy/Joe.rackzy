@@ -1,223 +1,155 @@
 import json
 from pathlib import Path
+
 JSON_FILE = Path(__file__).resolve().parent / "work_flow.json"
-     
+
+
 def creat_menu():
-    print("1. name".title())
-    print("2. check fees".title())
-    print("3. issue".title())
-    print("4. priority")
-    print("5. save ticket".title())
-    print("6. load ticket".title())
-    print("7. logout\n")
+    print("1. Name")
+    print("2. Check fees")
+    print("3. Issue")
+    print("4. Priority")
+    print("5. Save ticket")
+    print("6. Load ticket")
+    print("7. Logout\n")
+
 
 def student_name():
-    name = input("what is your name? ".title().strip())
-    return name    
+    return input("What is your name? ").strip()
+
 
 def school_fees():
-    print("1. i have paid")
-    print("2. i only paid half of the fees")
-    print("3. i have not pay\n".upper())
+    print("1. I have paid")
+    print("2. I only paid half of the fees")
+    print("3. I have not paid")
 
     while True:
         try:
-            fees = int(input("Have You Paid Your School Fees?\n choose from 1,2,3"))
+            fees = int(input("Have you paid your school fees? Choose from 1, 2, 3: "))
         except ValueError:
-            return "invalid input try again, choos from 1,2,3".title()
-        if fees in (1,2,3):
-            if fees == 1:
-                pay = "i have paid"
-                print(pay)
-            elif fees == 2:
-                pay = "i only paid half of the fees"
-                print(pay)     
-            else:
-                pay = "i have not pay".upper()
-                print(pay)  
-        return pay       
+            print("Invalid input. Choose from 1, 2, 3.")
+            continue
+
+        if fees == 1:
+            return "I have paid"
+        if fees == 2:
+            return "I only paid half of the fees"
+        if fees == 3:
+            return "I have not paid"
+
+        print("Invalid input. Choose from 1, 2, 3.")
+
 
 def issues():
-    question = input("what are the problem you are facing ".title())
-    return question
+    return input("What problem are you facing? ")
+
 
 def priority():
-    print("1. low")        
-    print("2. medium")
-    print("3. high")
-    print("4. critical")
+    print("1. Low")
+    print("2. Medium")
+    print("3. High")
+    print("4. Critical")
 
     while True:
         try:
-            prio = int(input("how critical is you issuse?"))
+            prio = int(input("How critical is your issue? Choose from 1, 2, 3, 4: "))
         except ValueError:
-            return "invalid input try again. choos from 1,2,3,4".title()
-        if prio in (1,2,3,4):
-            if prio == 1:
-                level = "low".title()
-                print(level)
-            elif prio == 2:
-                level = "medium".title()
-                print(level)
-            elif prio == 3:
-                level = "high".title()
-            else:
-                level = "critical".title() 
-                print(level)
-        return  level     
+            print("Invalid input. Choose from 1, 2, 3, 4.")
+            continue
+
+        if prio == 1:
+            return "Low"
+        if prio == 2:
+            return "Medium"
+        if prio == 3:
+            return "High"
+        if prio == 4:
+            return "Critical"
+
+        print("Invalid input. Choose from 1, 2, 3, 4.")
+
+
 def welcome():
     print("========================================")
-    print("you are welcome to campus flow".upper())
-    print("========================================\n")    
+    print("YOU ARE WELCOME TO CAMPUS FLOW")
+    print("========================================\n")
+
+
 def load_ticket():
     if not JSON_FILE.exists():
         return []
-    try:
-        with open(JSON_FILE , "r") as file:
-            return json.load(file)
-    except json.JSONDecodeError:   
-        return []
-tickets = []
-def save_ticket(ticket):
 
+    try:
+        with open(JSON_FILE, "r") as file:
+            data = json.load(file)
+            return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, OSError):
+        return []
+
+
+def save_ticket(ticket):
     tickets = load_ticket()
     if not isinstance(tickets, list):
-        return []
+        tickets = []
 
     tickets.append(ticket)
 
     with open(JSON_FILE, "w") as file:
-        json.dump(tickets,file, indent=4)
+        json.dump(tickets, file, indent=4)
 
 
 def main():
-    ticket ={
-     
-    }
     welcome()
-    while True:
-        
-        print("\t","choose an option".upper())
-        creat_menu()     
-def creat_menu():
-    print("1. name".title())
-    print("2. check fees".title())
-    print("3. issue".title())
-    print("4. priority")
-    print("5. save ticket".title())
-    print("6. load ticket".title())
-    print("7. logout\n")
-
-def student_name():
-    name = input("what is your name? ".title().strip())
-    return name    
-
-def school_fees():
-    print("1. i have paid")
-    print("2. i only paid half of the fees")
-    print("3. i have not pay\n".upper())
+    ticket = {}
 
     while True:
-        try:
-            fees = int(input("Have You Paid Your School Fees?\n choose from 1,2,3"))
-        except ValueError:
-            return "invalid input try again, choos from 1,2,3".title()
-        if fees in (1,2,3):
-            if fees == 1:
-                pay = "i have paid"
-                print(pay)
-            elif fees == 2:
-                pay = "i only paid half of the fees"
-                print(pay)     
-            else:
-                pay = "i have not pay".upper()
-                print(pay)  
-        return pay       
-
-def issues():
-    question = input("what are the problem you are facing ".title())
-    return question
-
-def priority():
-    print("1. low")        
-    print("2. medium")
-    print("3. high")
-    print("4. critical")
-
-    while True:
-        try:
-            prio = int(input("how critical is you issuse?"))
-        except ValueError:
-            return "invalid input try again. choos from 1,2,3,4".title()
-        if prio in (1,2,3,4):
-            if prio == 1:
-                level = "low".title()
-                print(level)
-            elif prio == 2:
-                level = "medium".title()
-                print(level)
-            elif prio == 3:
-                level = "high".title()
-            else:
-                level = "critical".title() 
-                print(level)
-        return  level     
-def welcome():
-    print("========================================")
-    print("you are welcome to campus flow".upper())
-    print("========================================\n")
-
-def main():
-    welcome()
-    while True:
-        print("\t choose an option".upper())
+        print("\tCHOOSE AN OPTION")
         creat_menu()
+
         try:
-            choice = int(input("choose from 1,2,3,4,5,6,7- "))
+            choice = int(input("Choose from 1, 2, 3, 4, 5, 6, 7: "))
         except ValueError:
-            print("invalid input try again form 1,2,3,4,5,6,7")
+            print("Invalid input. Try again from 1, 2, 3, 4, 5, 6, 7.")
             continue
+
         if choice == 1:
             ticket["Name"] = student_name()
 
         elif choice == 2:
-             ticket["fees"] = school_fees()
-        elif choice == 3:
-             ticket["issue"] = issues()
-        elif choice == 4:
-             ticket["priority"] = priority()
-        elif choice == 5:
-            if "Name" not in ticket or "fees" not in ticket or "issue" not in ticket or "priority" not in ticket:
-                print("ohh Snap! no ticket found try again from 1 -7")
-                continue
-    
-            save_ticket(ticket)
-            ticket = {}
-            print("!Bim ticket has been save save Successfully".strip()) 
+            ticket["Fees"] = school_fees()
 
+        elif choice == 3:
+            ticket["Issue"] = issues()
+
+        elif choice == 4:
+            ticket["Priority"] = priority()
+
+        elif choice == 5:
+            if not all(key in ticket for key in ("Name", "Fees", "Issue", "Priority")):
+                print("Oops! Ticket is incomplete. Please fill in Name, Fees, Issue, and Priority.")
+                continue
+
+            save_ticket(ticket)
+            print("Ticket saved successfully.")
+            ticket = {}
 
         elif choice == 6:
-            tickets = load_ticket() 
-            if not tickets:
+            saved_tickets = load_ticket()
+            if not saved_tickets:
                 print("No saved tickets found.\n")
             else:
                 print("\n--- ALL SAVED TICKETS ---")
-                for index, t in enumerate(tickets, start=1):
-                    print(f"T0{index}:\t")
-                    print(json.dumps(t, indent=4))
-                
-          
-        elif choice == 7:
-            print("good bye")
-            break
-        elif choice >= 8:
-            print("invalid option try again from 1,2,3,4,5,6,7")                      
+                for index, item in enumerate(saved_tickets, start=1):
+                    print(f"Ticket {index}:")
+                    print(json.dumps(item, indent=4))
 
+        elif choice == 7:
+            print("Goodbye")
+            break
+
+        else:
+            print("Invalid option. Try again from 1, 2, 3, 4, 5, 6, 7.")
 
 
 if __name__ == "__main__":
     main()
-
-
-
-     
